@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Our Application</h1>
+    <p>This is the home page of our application. You can navigate to different sections using the links below:</p>
+
+    <ul class="list-group">
+        <li class="list-group-item">
+        <a class="nav-link text-dark" asp-controller="Debit" asp-action="DebitRegister">Demirbaş</a>
+        </li>
+        <li class="list-group-item">
+            <a asp-action="Tanimlamalar">Tanımlamalar</a>
+        </li>
+        <li class="list-group-item">
+            <a asp-action="Zimmet">Zimmet</a>
+        </li>
+        <li class="list-group-item">
+            <a asp-action="ServisHizmetleri">Servis Hizmetleri</a>
+        </li>
+        <li class="list-group-item">
+            <a asp-action="SarfMalzeme">Sarf Malzeme</a>
+        </li>
+        <li class="list-group-item">
+            <a asp-action="Raporlar">Raporlar</a>
+        </li>
+    </ul>
+</div>

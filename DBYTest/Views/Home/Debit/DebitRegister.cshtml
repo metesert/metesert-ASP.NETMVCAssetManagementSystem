@@ -1,0 +1,229 @@
+﻿@model DBYTest.Models.TblDebitEnter
+
+@{
+    ViewData["Title"] = "Debit Register";
+    
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        .login-dark {
+            height: 1000px;
+            background-image: url('/DebitBG.jpg');
+            background-size: cover;
+            position: relative;
+            background-repeat: repeat;
+        }
+
+            .login-dark table td {
+                color: white; /* Metin rengini beyaz olarak ayarlar */
+            }
+
+            .login-dark form {
+                max-width: 1000px;
+                width: 92%;
+                background-color: #1e2833;
+                padding: 10px;
+                border-radius: 4px;
+                transform: translate(-50%, -50%);
+                position: absolute;
+                top: 30%;
+                left: 50%;
+                color: #fff;
+                box-shadow: 3px 3px 4px rgba(0,0,0,45);
+                line-height: 1.5;
+            }
+
+            .login-dark .illustration {
+                text-align: center;
+                padding: 15px 0 20px;
+                font-size: 100px;
+                color: #2980ef;
+            }
+
+            .login-dark form .form-control {
+                background: none;
+                border: none;
+                border-bottom: 1px solid #434a52;
+                border-radius: 0;
+                box-shadow: none;
+                outline: none;
+                color: inherit;
+            }
+
+            .login-dark form .btn-primary {
+                background: #214a80;
+                border: none;
+                border-radius: 4px;
+                padding: 11px;
+                box-shadow: none;
+                margin-top: 26px;
+                text-shadow: none;
+                outline: none;
+            }
+
+                .login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
+                    background: #214a80;
+                    outline: none;
+                }
+
+            .login-dark form .forgot {
+                display: block;
+                text-align: center;
+                font-size: 12px;
+                color: #6f7a85;
+                opacity: 0.9;
+                text-decoration: none;
+            }
+
+                .login-dark form .forgot:hover, .login-dark form .forgot:active {
+                    opacity: 1;
+                    text-decoration: none;
+                }
+
+            .login-dark form .btn-primary:active {
+                transform: translateY(1px);
+            }
+
+            .login-dark form .form-group {
+                margin-bottom: 0.001px; /* Başlıklar arasındaki boşluğu azaltır */
+                margin-bottom: 0.01px; /* Başlıklar ile giriş alanları arasındaki dikey boşluğu daraltır */
+                margin-top: 0.1px; /* Giriş alanları ile bir sonraki başlık arasındaki dikey boşluğu daraltır */
+            }
+    </style>
+</head>
+<body>
+
+
+
+    <form action="/Debit/DebitRegister" method="post">
+        @Html.AntiForgeryToken()
+        <div class="login-dark">
+            <h1>Debit Register</h1>
+
+            
+            <div class="form-group">
+                <div class="row">
+
+                    <table>
+
+                        <tr>
+                            <td>Barkod No</td>
+                            <td>@Html.TextBoxFor(m => m.BarkodNo)</td>
+                            <td>Demirbaş Türü</td>
+                            <td>@Html.TextBoxFor(m => m.DemirbasTuru)</td>
+
+                        </tr>
+                        <tr>
+                            <td>Marka</td>
+                            <td>@Html.TextBoxFor(m => m.Marka)</td>
+                            <td>Model</td>
+                            <td>@Html.TextBoxFor(m => m.Model2)</td>
+                        </tr>
+                        <tr>
+                            <td>Ürün Seri No</td>
+                            <td>@Html.TextBoxFor(m => m.UrunSeriNo)</td>
+                            <td>IMEINo</td>
+                            <td>@Html.TextBoxFor(m => m.Imeino)</td>
+                        </tr>
+                        <tr>
+                            <td>MACAdres1</td>
+                            <td>@Html.TextBoxFor(m => m.Macadres1)</td>
+                            <td>MACAdres2</td>
+                            <td>@Html.TextBoxFor(m => m.Macadres2)</td>
+                        </tr>
+                        <tr>
+                            <td>Tedarikçi Firma</td>
+                            <td>@Html.TextBoxFor(m => m.TedarikciFirma)</td>
+                            <td>Demirbaş Durumu</td>
+                            <td>@Html.TextBoxFor(m => m.DemirbasDurumu)</td>
+                        </tr>
+                        <tr>
+                            <td>Lokasyon</td>
+                            <td>@Html.TextBoxFor(m => m.Lokasyon)</td>
+                            <td>Raf Sıra No</td>
+                            <td>@Html.TextBoxFor(m => m.RafSiraNo)</td>
+                        </tr>
+                        <tr>
+                            <td>Yazılım/Sistem</td>
+                            <td>@Html.TextBoxFor(m => m.YazilimSistem)</td>
+                            <td>Sipariş No</td>
+                            <td>@Html.TextBoxFor(m => m.SiparisNo)</td>
+                        </tr>
+                        <tr>
+                            <td>FaturaTarihi</td>
+                            <td>@Html.TextBoxFor(m => m.FaturaTarihi)</td>
+                            <td>Temin Tarihi</td>
+                            <td>@Html.TextBoxFor(m => m.TeminTarihi)</td>
+                        </tr>
+                        <tr>
+                            <td>Son Kullanma Tarihi</td>
+                            <td>@Html.TextBoxFor(m => m.SonKullanmaTarihi)</td>
+                            <td>GarantiBitisTarihi</td>
+                            <td>@Html.TextBoxFor(m => m.GarantiBitisTarihi)</td>
+                        </tr>
+                        <tr>
+                            <td>ServisHizmeti</td>
+                            <td>@Html.TextBoxFor(m => m.ServisHizmeti)</td>
+                            <td>Ek Demirbas</td>
+                            <td>@Html.TextBoxFor(m => m.EkDemirbas)</td>
+                        </tr>
+                        <tr>
+                            <td>Açıklama</td>
+                            <td>@Html.TextBoxFor(m => m.Aciklama)</td>
+                            <td>CAPEX</td>
+                            <td>@Html.TextBoxFor(m => m.Capex)</td>
+                        </tr>
+                        <tr>
+                            <td>OPEX</td>
+                            <td>@Html.TextBoxFor(m => m.Opex)</td>
+                            <td>DuranVarlik</td>
+                            <td>@Html.TextBoxFor(m => m.DuranVarlik)</td>
+                        </tr>
+                        <tr>
+                            <td>Yatırım</td>
+                            <td>@Html.TextBoxFor(m => m.Yatirim)</td>
+                            <td>GarantiBitisTarihi</td>
+                            <td>@Html.TextBoxFor(m => m.GarantiBitisTarihi)</td>
+                        </tr>
+                        <tr>
+                            <td>Lisans Etiketi</td>
+                            <td>@Html.TextBoxFor(m => m.LisansEtiketi)</td>
+                            <td>Owner</td>
+                            <td>
+                                <select name="Owner">
+                                    <option value="NULL">NULL</option>
+                                    <option value="Orhan Çalışkan">Orhan Çalışkan</option>
+                                    <option value="Oğuz Güldüren">Oğuz Güldüren</option>
+                                    <option value="Murat Bayram">Murat Bayram</option>
+                                  
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fatura Tutarı</td>
+                            <td>@Html.TextBoxFor(m => m.FaturaTutari)</td>
+                            <td>Zimmetli Personel</td>
+                            <td>@Html.TextBoxFor(m => m.ZimmetliPersonel)</td>
+                        </tr>
+                    </table>
+
+
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+
+
+        </div>
+    </form>
+
+
+</body>
+</html>
